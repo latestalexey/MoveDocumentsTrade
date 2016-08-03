@@ -69,21 +69,6 @@
 			</ToolTip>
 			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="56"/>
 			<ChildItems>
-				<Page name="СтраницаПодключение" id="57">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Подключение</v8:content>
-						</v8:item>
-					</Title>
-					<ToolTip>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Страница подключение</v8:content>
-						</v8:item>
-					</ToolTip>
-					<ExtendedTooltip name="СтраницаПодключениеРасширеннаяПодсказка" id="58"/>
-				</Page>
 				<Page name="СтраницаДокументы" id="59">
 					<Title>
 						<v8:item>
@@ -189,6 +174,78 @@
 									<ContextMenu name="ЗагруженныеДокументыПроведенКонтекстноеМеню" id="83"/>
 									<ExtendedTooltip name="ЗагруженныеДокументыПроведенРасширеннаяПодсказка" id="84"/>
 								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="Проблемы" id="87">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Проблемы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Проблемы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ПроблемыРасширеннаяПодсказка" id="88"/>
+					<ChildItems>
+						<Table name="ПроблемныеДокументы" id="89">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ПроблемныеДокументы</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПроблемныеДокументыКонтекстноеМеню" id="90"/>
+							<AutoCommandBar name="ПроблемныеДокументыКоманднаяПанель" id="91"/>
+							<ExtendedTooltip name="ПроблемныеДокументыРасширеннаяПодсказка" id="92"/>
+							<SearchStringAddition name="ПроблемныеДокументыСтрокаПоиска" id="93">
+								<AdditionSource>
+									<Item>ПроблемныеДокументы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПроблемныеДокументыСтрокаПоискаКонтекстноеМеню" id="94"/>
+								<ExtendedTooltip name="ПроблемныеДокументыСтрокаПоискаРасширеннаяПодсказка" id="95"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПроблемныеДокументыСостояниеПросмотра" id="96">
+								<AdditionSource>
+									<Item>ПроблемныеДокументы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПроблемныеДокументыСостояниеПросмотраКонтекстноеМеню" id="97"/>
+								<ExtendedTooltip name="ПроблемныеДокументыСостояниеПросмотраРасширеннаяПодсказка" id="98"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПроблемныеДокументыУправлениеПоиском" id="99">
+								<AdditionSource>
+									<Item>ПроблемныеДокументы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПроблемныеДокументыУправлениеПоискомКонтекстноеМеню" id="100"/>
+								<ExtendedTooltip name="ПроблемныеДокументыУправлениеПоискомРасширеннаяПодсказка" id="101"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ПроблемныеДокументыДокумент" id="102">
+									<DataPath>ПроблемныеДокументы.Документ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПроблемныеДокументыДокументКонтекстноеМеню" id="103"/>
+									<ExtendedTooltip name="ПроблемныеДокументыДокументРасширеннаяПодсказка" id="104"/>
+								</InputField>
+								<InputField name="ПроблемныеДокументыПроблема" id="105">
+									<DataPath>ПроблемныеДокументы.Проблема</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПроблемныеДокументыПроблемаКонтекстноеМеню" id="106"/>
+									<ExtendedTooltip name="ПроблемныеДокументыПроблемаРасширеннаяПодсказка" id="107"/>
+								</InputField>
+								<InputField name="ПроблемныеДокументыОшибка" id="108">
+									<DataPath>ПроблемныеДокументы.Ошибка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПроблемныеДокументыОшибкаКонтекстноеМеню" id="109"/>
+									<ExtendedTooltip name="ПроблемныеДокументыОшибкаРасширеннаяПодсказка" id="110"/>
+								</InputField>
 							</ChildItems>
 						</Table>
 					</ChildItems>
@@ -348,6 +405,60 @@
 					</Title>
 					<Type>
 						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПроблемныеДокументы" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проблемные документы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Документ" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Проблема" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Проблема</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Ошибка" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ошибка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
 					</Type>
 				</Column>
 			</Columns>
